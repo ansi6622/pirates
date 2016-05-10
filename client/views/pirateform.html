@@ -1,0 +1,17 @@
+<h3>Add a Pirate!</h3>
+<form class="" novalidate method="post">
+  <label for="name">Pirate Name:
+    <input type="text" name="name" ng-model="pirate.name" value="">
+  </label>
+  <label for="poison">Pirate's Poison:
+    <input type="text" name="poison" ng-model="pirate.poison" value="">
+  </label>
+  <label for="accessory">An Accessory:
+    <input type="text" name="accessory" ng-model="pirate.accessory" value="">
+  </label>
+  <label for="image_url">Pics?
+    <input type="text" name="image_url" ng-model="pirate.image_url" value="">
+  </label>
+  <input type="button" ng-click="reset()" value="Reset" />
+  <input type="submit" value="HIT ME!" ng-click="submit(pirate)">
+</form>

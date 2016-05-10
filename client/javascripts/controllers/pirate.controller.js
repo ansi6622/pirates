@@ -6,5 +6,7 @@ angular.module('pirates')
   });
   $scope.data.message = "I am a pirate";
   $scope.data.fun = "IIII am a  BAAANANA!";
-
+  $scope.submit = function(pirate){
+    PiratesService.create(pirate);
+  };
 }])
