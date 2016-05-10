@@ -1,0 +1,15 @@
+<h1>Pirates</h1>
+<article class="" ng-repeat="pirate in pirates.data">
+   <div class="media left">
+    <img class="fiddy" src="{{pirate.image_url}}">
+
+  </div>
+<div class="media right">
+  <h2 ng-bind="pirate.name"></h2>
+  <p ng-bind="pirate.poison"></p>
+  <p ng-bind="pirate.accessory"></p>
+  <p ng-bind="pirate.image_url"></p>
+
+</div>
+
+</article>
