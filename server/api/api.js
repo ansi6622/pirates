@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
 router.post('/create', function(req, res, next){
   Pirates().insert({name: req.body.name, poison: req.body.poison, accessory: req.body.accessory, image_url: req.body.image_url}).then(function(){
     console.log('resinatin on the station to station');
+    res.end();
   }
   )
 })
