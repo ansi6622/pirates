@@ -1,16 +1,27 @@
 angular.module('pirates')
-.service('PiratesService', function($http){
+.service('PiratesService', function($http, $q){
   this.master = {};
   return {
     all: function() {
       return $http.get('/api/pirates');
     },
     create: function(pirate) {
-      return $http.post('/api/pirates/create', pirate).success(function(data, status){
+      var deferred = $q.defer();
+
+      $http.post('/api/pirates/create', pirate)
+      .then(function(success){
        console.log('yaaaay');
-       console.log(data);
-       console.log(status);
+       if(success){
+         deferred.resolve(success);
+         console.log(success);
+       }
      })
+     .catch(function(err){
+       deferred.reject(err);
+       console.log(err);
+     })
+
+     return deferred.promise;
     },
     reset: function() {
       this.pirate = angular.copy(this.master);
